@@ -21,7 +21,7 @@ An Arduino-based classroom bell automation system that also displays the time, d
 
 ## 📷 Circuit Diagram
 
-![Circuit Diagram](circuit_diagram/bell_circuit.png)
+![Circuit Diagram](Automated_Bell_with_LED_Display/circuit_diagram/circuit.png)
 
 ## 🗂️ Code
 
