@@ -1,68 +1,72 @@
-Automated Bell System with LED Display
-An Arduino-based classroom automation system that rings the bell according to a predefined schedule and displays real-time information such as the current time, weekday, and class period on a P10 LED display.
+# Automated Bell System with LED Display
 
-Features
-Automatic bell ringing using a Real-Time Clock (RTC DS3231)
+An Arduino-based classroom automation system that automatically rings a bell according to a daily schedule and displays the real-time clock, weekday, and class period on a P10 LED matrix display.
 
-Real-time display of time and day on a P10 LED matrix
+---
 
-Shows the current class period based on the schedule
+## **Features**
 
-Manual override for triggering the bell
+- **Automatic bell ringing** using RTC DS3231
+- **Time and day display** on P10 LED matrix
+- **Current class period** display based on daily schedule
+- **Manual bell override** button support
+- **Optional Bluetooth control** for updating schedule remotely
+- **Relay control** to operate an electric bell or buzzer
 
-Optional Bluetooth support for updating the schedule remotely
+---
 
-Relay output to drive a bell or buzzer
+## **Components Used**
 
-Components Used
-Component	Quantity	Description
-Arduino Uno	1	Microcontroller board
-RTC Module (DS3231)	1	For accurate timekeeping
-P10 LED Display Panel	1 or more	Dot matrix display for time and schedule info
-Bluetooth Module (HC-05 or HC-06)	1	Optional wireless control
-Relay Module	1	To switch bell or buzzer
-Electric Bell / Buzzer	1	Acts as the alarm output
-Power Supply (12V)	1	To power P10 display and relay
-Jumper Wires	-	For circuit connections
-Diode (1N4007 or similar)	Optional	For relay flyback protection
-Capacitor	Optional	For stabilizing relay trigger circuit
+| **Component**               | **Quantity** | **Description**                                  |
+|-----------------------------|--------------|--------------------------------------------------|
+| Arduino Uno                 | 1            | Main microcontroller                             |
+| RTC Module (DS3231)         | 1            | Real-time clock for precise scheduling           |
+| P10 LED Display Panel       | 1 or more    | For displaying time, day, and period             |
+| Bluetooth Module (HC-05/HC-06) | 1         | Optional wireless interface                      |
+| Relay Module                | 1            | Switches the bell or buzzer                      |
+| Buzzer / Electric Bell      | 1            | Output for bell notification                     |
+| Power Supply (12V, 5V Reg.) | 1            | Powers the display and Arduino                   |
+| Jumper Wires                | As needed    | For all wiring connections                       |
+| Diode (1N4007 or similar)   | Optional     | Flyback protection for relay                     |
+| Capacitor (e.g., 100µF)     | Optional     | Stabilization for relay trigger                  |
 
-Circuit Diagram
-Detailed Circuit Diagram:
+---
 
-Refer to the image at: circuit_diagram/circuit.png
+## **Circuit Diagram**
 
-Key Connections
-RTC DS3231 to Arduino
+**Location:** `circuit_diagram/circuit.png`
 
-SDA → A4
+### **Main Connections**
 
-SCL → A5
+**RTC DS3231 → Arduino**
+- SDA → A4  
+- SCL → A5
 
-P10 Display to Arduino (via SPI)
+**P10 Display → Arduino (SPI Interface)**
+- CLK → Pin 11  
+- DATA → Pin 12  
+- CS (LOAD) → Pin 10  
 
-CLK → Pin 11
+**Relay Module → Arduino**
+- IN → Pin 4  
+- VCC & GND → Power Supply (use diode across coil for safety)
 
-DATA → Pin 12
+**Bluetooth Module → Arduino (Optional)**
+- TX → Pin 2 (SoftwareSerial RX)  
+- RX → Pin 3 (via voltage divider, SoftwareSerial TX)
 
-CS → Pin 10
+**Power**
+- Arduino + RTC: 5V  
+- P10 Display: 12V regulated (shared ground with Arduino)
 
-Relay Module to Arduino
+**Note:** For inductive components like relays or bells, always use a **flyback diode** (e.g., 1N4007) across the relay coil to protect the Arduino.
 
-IN → Pin 4
+---
 
-VCC/GND as per standard relay connection
+## **Future Enhancements**
 
-Bluetooth Module to Arduino (Optional)
-
-TX → Pin 2 (SoftwareSerial RX)
-
-RX → Pin 3 (SoftwareSerial TX with voltage divider)
-
-Power Supply
-
-5V for Arduino and RTC
-
-12V for P10 panel and Relay (with proper regulators)
-
-Note: When controlling inductive loads such as relays or bells, always use a diode (e.g., 1N4007) in reverse across the coil terminals to prevent back EMF damage.
+- EEPROM or SD card-based schedule storage
+- Mobile app for live configuration via Bluetooth
+- LCD fallback display
+- Multi-day or exam-mode schedules
+- Attendance or RFID integration
