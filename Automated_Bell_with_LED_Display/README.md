@@ -25,4 +25,4 @@ An Arduino-based classroom bell automation system that also displays the time, d
 
 ## 🗂️ Code
 
-The Arduino sketch is located at:
+The Arduino sketch is located at:![Automated_Bell_with_LED_Display/code/smart_bell.ino]
