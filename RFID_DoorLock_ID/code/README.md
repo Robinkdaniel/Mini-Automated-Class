@@ -4,17 +4,17 @@ A simple Arduino-based door access system using RFID and a solenoid lock, design
 
 ---
 
-## 🔒 Features
+## Features
 
-- ✅ Solenoid lock control via NPN transistor or 5V relay
-- ✅ LCD 16x2 (I2C) display for access feedback
-- ✅ Authorized RFID UID-based access
-- ✅ Serial Monitor logging (for attendance tracking)
-- ✅ Beginner-friendly wiring and code
+-  Solenoid lock control via NPN transistor or 5V relay
+-  LCD 16x2 (I2C) display for access feedback
+-  Authorized RFID UID-based access
+-  Serial Monitor logging (for attendance tracking)
+-  Beginner-friendly wiring and code
 
 ---
 
-## 🧰 Hardware Components
+## Hardware Components
 
 | Component           | Description                         |
 |--------------------|-------------------------------------|
@@ -31,7 +31,7 @@ A simple Arduino-based door access system using RFID and a solenoid lock, design
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 1. System starts and waits for RFID card.
 2. When a card is scanned, the UID is checked.
@@ -47,16 +47,13 @@ This can double as a basic **attendance log** by reading the Serial Monitor outp
 
 ---
 
-## 🖼️ Circuit Diagram
+## Circuit Diagram
 
-📌 Available in the file:  
-**`A_schematic_diagram_of_an_RFID-based_door_lock_sys.png`**
-
-📷 ![Circuit Diagram Preview](./A_schematic_diagram_of_an_RFID-based_door_lock_sys.png)
+📷 ![Circuit Diagram Preview](RFID Door Lock System Schematic.png)
 
 ---
 
-## 📝 Notes
+##  Notes
 
 - Replace `validUID` in the code with the UID shown in the Serial Monitor after scanning your card.
 - Ensure the solenoid is powered from an external 12V source, not directly from the Arduino.
@@ -65,7 +62,7 @@ This can double as a basic **attendance log** by reading the Serial Monitor outp
 
 ---
 
-## 📈 Future Enhancements
+##  Future Enhancements
 
 - EEPROM or SD card logging of entries
 - RTC module for real-time attendance logs
@@ -75,7 +72,7 @@ This can double as a basic **attendance log** by reading the Serial Monitor outp
 
 ---
 
-## 👤 Created By
+## Created By
 
 **Robin**  
 Electronics & Communication Engineering – Final Year  
@@ -83,8 +80,7 @@ Mini Project under `Mini_Automated_Class`
 
 ---
 
-## 📄 License
+## License
 
 MIT License — Free to use, modify, and redistribute.
 
-**Built with ❤️ using Arduino**
