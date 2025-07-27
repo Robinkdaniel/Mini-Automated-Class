@@ -70,3 +70,4 @@ An Arduino-based classroom automation system that automatically rings a bell acc
 - LCD fallback display
 - Multi-day or exam-mode schedules
 - Attendance or RFID integration
+![Circuit Diagram](circuit_diagram/circuit.png)
